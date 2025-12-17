@@ -8,10 +8,10 @@
 ---
 
 ## 📊 About Me
-- 📍 Based in [Your Country]
+- 📍 Based in [EGYPT]
 - 👨‍💼 Accountant with strong **data analysis** and **financial reporting** skills  
 - 💡 Turning raw data into insights, dashboards, and strategic decisions  
-- 💻 Skilled in **Microsoft Excel (Advanced), Power Query, Power BI (Basics)** - ⚙️ Automating tasks using **Excel VBA** - 📈 Experience with **SQL / database reporting** - 📫 Reach me at: **your.email@example.com**
+- 💻 Skilled in **Microsoft Excel (Advanced), Power Query, Power BI (Basics)** - ⚙️ Automating tasks using **Excel VBA** - 📈 Experience with **SQL / database reporting** - 📫 Reach me at: **Meeedo_17@yahoo.com**
 
 ---
 
