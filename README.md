@@ -44,7 +44,7 @@
 
 ## 📫 Contact Me
 <p align="center">
-  <a href="mailto:your.email@example.com"><img width="40" src="https://img.icons8.com/color/48/gmail.png"/></a>
+  <a href="mailto:your.Meeedo_17@yahoo.com"><img width="40" src="https://img.icons8.com/color/48/gmail.png"/></a>
   <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_PROFILE/"><img width="40" src="https://img.icons8.com/color/48/linkedin.png"/></a>
 </p>
 
