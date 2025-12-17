@@ -1,6 +1,5 @@
-<!-- HEADER / HERO -->
 <p align="center">
-  <img width="90%" src="https://raw.githubusercontent.com/zzetao/github-profile/master/images/header.png" alt="Accounting & Data Analysis Banner"/>
+<img width="40%" src="https://static.vecteezy.com/system/resources/thumbnails/049/767/305/small/finance-data-analytics-optimization-dashboard-illustration-free-png.png" alt="Data Analytics Dashboard Banner"/>
 </p>
 
 <h1 align="center">Hi, I’m Mohamed 👋</h1>
@@ -12,10 +11,7 @@
 - 📍 Based in [Your Country]
 - 👨‍💼 Accountant with strong **data analysis** and **financial reporting** skills  
 - 💡 Turning raw data into insights, dashboards, and strategic decisions  
-- 💻 Skilled in **Microsoft Excel (Advanced), Power Query, Power BI (Basics)**  
-- ⚙️ Automating tasks using **Excel VBA**  
-- 📈 Experience with **SQL / database reporting**  
-- 📫 Reach me at: **your.email@example.com**
+- 💻 Skilled in **Microsoft Excel (Advanced), Power Query, Power BI (Basics)** - ⚙️ Automating tasks using **Excel VBA** - 📈 Experience with **SQL / database reporting** - 📫 Reach me at: **your.email@example.com**
 
 ---
 
@@ -39,23 +35,11 @@
 
 ## 📂 What I’m Working On
 ### 🔹 Repositories
-- **📌 Financial Dashboards (Excel + Power BI)**  
-  Interactive dashboards for tracking performance & KPIs.
+- **📌 Financial Dashboards (Excel + Power BI)** Interactive dashboards for tracking performance & KPIs.
 
-- **📌 Excel Automation Templates**  
-  Useful macros & templates for accountants.
+- **📌 Excel Automation Templates** Useful macros & templates for accountants.
 
-- **📌 SQL Reporting Scripts**  
-  Data extraction & transformation samples.
-
----
-
-## 📈 GitHub Stats
-<p align="center">
-  <img height="150" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=radical" alt="GitHub stats"/>
-  <img height="150" src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=radical" alt="GitHub streak"/>
-</p>
-
+- **📌 SQL Reporting Scripts** Data extraction & transformation samples.
 ---
 
 ## 📫 Contact Me
