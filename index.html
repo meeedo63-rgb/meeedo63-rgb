@@ -3,529 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Portfolio of Mohamed Mosaad, a Data Analyst & Accountant specializing in Power BI, Excel, and SQL for financial insights.">
-    <meta name="keywords" content="Data Analyst, Accountant, Power BI, Excel, SQL, Financial Analysis, Business Intelligence, Portfolio">
-    <title>Mohamed Mosaad | Data Analyst & Accountant Portfolio</title>
+    <meta name="description" content="Professional Portfolio of Mohamed Mosaad - Senior Accountant & Data Analyst with 15+ years of experience in Power BI and Excel.">
+    <title>Mohamed Mosaad | Senior Accountant & Data Analytics Expert</title>
     
-    <!-- Load Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter Font -->
+    <!-- Google Fonts (Inter) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Custom Tailwind Configuration and Base Styles */
-        :root {
-            --primary: #2563eb; /* Blue 600 */
-            --accent: #1e40af; /* Blue 800 */
-            --text-base: #1f2937; /* Gray 900 */
-            --text-muted: #4b5563; /* Gray 600 */
-            --bg-light: #f9fafb; /* Gray 50 */
-            --bg-card: #ffffff;
-        }
-
-        /* Dark Mode Variables */
-        .dark {
-            --text-base: #f3f4f6; /* Gray 100 */
-            --text-muted: #d1d5db; /* Gray 300 */
-            --bg-light: #111827; /* Gray 900 */
-            --bg-card: #1f2937; /* Gray 800 */
-        }
-        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-base);
-            transition: background-color 0.3s, color 0.3s;
             scroll-behavior: smooth;
         }
-
-        /* Custom Styles for Subtle Scroll Animation */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        .gradient-blue {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         }
-
-        .fade-in-up.active {
-            opacity: 1;
-            transform: translateY(0);
+        .text-gradient {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        /* Nav Active Link Style */
-        .nav-link.active {
-            color: var(--primary);
-            font-weight: 600;
-            border-bottom: 3px solid var(--primary);
-            padding-bottom: 0.5rem;
+        .hover-lift {
+            transition: transform 0.3s ease, shadow 0.3s ease;
         }
-        
-        /* Utility for Icon SVG */
-        .icon-svg {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            stroke-width: 2;
-            stroke: currentColor;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+        .hover-lift:hover {
+            transform: translateY(-8px);
         }
-
-        /* Custom Scrollbar for Aesthetics */
-        body::-webkit-scrollbar {
-            width: 8px;
-        }
-        body::-webkit-scrollbar-track {
-            background: var(--bg-light);
-        }
-        body::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-        .dark::-webkit-scrollbar-track {
-             background: #1f2937;
-        }
-        .dark::-webkit-scrollbar-thumb {
-            background: #60a5fa;
-        }
-
     </style>
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'class', // Enable dark mode based on 'dark' class
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#2563eb', // Blue 600
-                        'accent': '#1e40af',  // Blue 800
-                        'bg-light': '#f9fafb',
-                        'bg-dark': '#111827',
-                        'card-light': '#ffffff',
-                        'card-dark': '#1f2937',
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-bg-light text-text-base transition-colors duration-300">
+<body class="bg-slate-50 text-slate-900">
 
-    <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-card-dark/90 backdrop-blur-md shadow-md transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="#home" class="text-2xl font-extrabold text-primary tracking-tight">Mohamed Mosaad</a>
-                
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="nav-link text-text-base hover:text-primary transition duration-150 py-1">Home</a>
-                    <a href="#about" class="nav-link text-text-base hover:text-primary transition duration-150 py-1">About</a>
-                    <a href="#skills" class="nav-link text-text-base hover:text-primary transition duration-150 py-1">Skills</a>
-                    <a href="#projects" class="nav-link text-text-base hover:text-primary transition duration-150 py-1">Projects</a>
-                    <a href="#contact" class="nav-link text-text-base hover:text-primary transition duration-150 py-1">Contact</a>
-                    
-                    <!-- Dark Mode Toggle -->
-                    <button id="theme-toggle" aria-label="Toggle dark mode"
-                            class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150">
-                        <!-- Icon Placeholder - will be updated by JS -->
-                        <span id="theme-icon">
-                            <svg class="icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
-                        </span>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-text-base dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-150">
-                    <svg class="icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"></path></svg>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-card-dark/95 border-t border-gray-200 dark:border-gray-700">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-                <a href="#home" class="mobile-nav-link text-base font-medium w-full text-center py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Home</a>
-                <a href="#about" class="mobile-nav-link text-base font-medium w-full text-center py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">About</a>
-                <a href="#skills" class="mobile-nav-link text-base font-medium w-full text-center py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Skills</a>
-                <a href="#projects" class="mobile-nav-link text-base font-medium w-full text-center py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Projects</a>
-                <a href="#contact" class="mobile-nav-link text-base font-medium w-full text-center py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Contact</a>
-                <div class="py-2">
-                    <button id="theme-toggle-mobile" aria-label="Toggle dark mode" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-150">
-                        <span id="theme-icon-mobile">
-                             <svg class="icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
-                        </span>
-                    </button>
-                </div>
+    <!-- Header / Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-blue-700 tracking-tight uppercase">M. MOSAAD</div>
+            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#portfolio" class="hover:text-blue-600 transition">Portfolio</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition shadow-md shadow-blue-200">Contact Me</a>
             </div>
         </div>
     </nav>
 
-    <main class="pt-20">
-        <!-- Hero Section -->
-        <section id="home" class="relative overflow-hidden pt-16 pb-24 sm:pt-24 sm:pb-32 lg:pt-32 lg:pb-40 bg-white dark:bg-card-dark transition-colors duration-300">
-            <!-- Background pattern -->
-            <div class="absolute inset-0 z-0 opacity-10 dark:opacity-5">
-                <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <pattern id="pattern-circles" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                        <circle cx="2" cy="2" r="1" fill="#9ca3af" />
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#pattern-circles)"/>
-                </svg>
-            </div>
-
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
-                <p class="text-lg font-semibold text-primary uppercase tracking-wider mb-4">Strategic Insights in Finance & Analytics</p>
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-text-base dark:text-gray-100 mb-6">
-                    <span class="block">Mohamed Mosaad</span>
-                    <span class="block text-4xl sm:text-5xl lg:text-6xl text-gray-700 dark:text-gray-300 mt-2">Data Analyst & Accountant</span>
+    <!-- Hero Section -->
+    <section id="about" class="pt-40 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-bold mb-6">
+                    15+ Years of Professional Experience
+                </span>
+                <h1 class="text-5xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
+                    Mohamed Mosaad <br><span class="text-gradient">Data & Finance</span>
                 </h1>
-                <p class="mt-6 max-w-3xl mx-auto text-xl text-text-muted dark:text-gray-400">
-                    I transform complex financial data into actionable strategic insights, leveraging mastery in Power BI, advanced Excel modeling, and robust SQL querying to drive measurable business success.
+                <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-lg">
+                    I help business owners organize accounts, secure financial data, and transform complex numbers into interactive insights using Power BI and Excel.
                 </p>
-                <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contact" class="btn-primary">
-                        Connect with Me
-                        <svg class="icon-svg w-5 h-5 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><path d="m15 3 6 6M21 3 11 13"></path></svg>
-                    </a>
-                    <a href="/jane_doe_cv.pdf" download class="btn-secondary">
-                        Download CV (PDF)
-                        <svg class="icon-svg w-5 h-5 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17V3"></path><path d="m6 11 6 6 6-6M19 21H5"></path></svg>
-                    </a>
+                <div class="flex space-x-4">
+                    <a href="#portfolio" class="bg-blue-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200">View My Work</a>
+                    <a href="#contact" class="bg-white border border-slate-200 px-10 py-4 rounded-2xl font-bold hover:border-blue-400 transition-all">Get in Touch</a>
                 </div>
             </div>
-        </section>
+            <div class="relative hidden md:block">
+                <div class="w-full h-[500px] gradient-blue rounded-[2rem] shadow-2xl overflow-hidden flex items-center justify-center">
+                    <svg class="w-48 h-48 text-white/20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                    </svg>
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                    <p class="text-sm text-slate-400 font-bold uppercase tracking-wider">Reliability</p>
+                    <p class="text-3xl font-black text-blue-700">100% Data Accuracy</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="py-20 sm:py-24 bg-bg-light dark:bg-bg-dark transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-up">
-                    <h2 class="text-4xl font-extrabold text-text-base dark:text-gray-100">About Me</h2>
-                    <p class="mt-4 text-xl text-text-muted dark:text-gray-400 max-w-2xl mx-auto">The Intersection of Financial Rigor and Data Science</p>
+    <!-- Projects / Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-4xl font-black mb-4">Featured Projects</h2>
+                    <p class="text-slate-500 text-lg">A selection of my recent financial and data analysis work.</p>
+                </div>
+                <div class="flex gap-3">
+                    <span class="px-4 py-2 bg-blue-600 text-white rounded-xl text-sm font-bold">All</span>
+                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium hover:border-blue-500 cursor-pointer transition">Power BI</span>
+                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium hover:border-blue-500 cursor-pointer transition">Excel</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-56 bg-slate-200 relative overflow-hidden flex items-center justify-center text-slate-400 italic">
+                        [Image of Sales Dashboard Power BI]
+                        <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                             <button class="bg-white text-blue-700 px-6 py-2 rounded-full font-bold">View Demo</button>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold">Interactive Sales Dashboard</h3>
+                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">Power BI</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6">Complete sales performance analysis with drill-down capabilities by region and product line.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-56 bg-slate-200 relative overflow-hidden flex items-center justify-center text-slate-400 italic">
+                        [Image of Financial Statement Report]
+                        <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                             <button class="bg-white text-blue-700 px-6 py-2 rounded-full font-bold">View Details</button>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold">Annual Financial Report</h3>
+                            <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Accounting</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6">Preparation of audited balance sheets and income statements for a multi-national firm.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+                    <div class="h-56 bg-slate-200 relative overflow-hidden flex items-center justify-center text-slate-400 italic">
+                        
+                        <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                             <button class="bg-white text-blue-700 px-6 py-2 rounded-full font-bold">View Demo</button>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold">Inventory Automation Tool</h3>
+                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Excel/VBA</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6">Custom Excel solution reducing data entry time by 70% using Power Query and macros.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-slate-500 mb-6 italic">Interested in seeing more specialized cases?</p>
+                <a href="#contact" class="inline-flex items-center text-blue-600 font-bold hover:gap-2 transition-all">
+                    Request custom portfolio <span class="ml-2">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise / Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-black mb-4">Core Services</h2>
+                <p class="text-slate-500 text-lg">Specialized financial solutions for your business growth</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover-lift">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">📊</div>
+                    <h3 class="text-xl font-bold mb-4">Financial Accounting</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Systematic recording of daily entries, expense tracking, and meticulous error detection through professional auditing.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover-lift">
+                    <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">📋</div>
+                    <h3 class="text-xl font-bold mb-4">Financial Reporting</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Preparation of Income Statements, Balance Sheets, and Cash Flow reports ready for board presentation or printing.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover-lift">
+                    <div class="w-14 h-14 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">💡</div>
+                    <h3 class="text-xl font-bold mb-4">BI & Data Analysis</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Creating interactive Dashboards in Power BI. Connecting and cleaning data via Power Query for precise decision-making.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover-lift">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">⚡</div>
+                    <h3 class="text-xl font-bold mb-4">Excel Automation</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Designing organized, high-speed Excel templates using Pivot Tables and advanced formulas for efficient workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools Section -->
+    <section id="skills" class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-black mb-8">Technical Mastery</h2>
+                    <p class="text-slate-400 text-lg mb-12">Leveraging the best tools in the industry to provide deep financial insights.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10">
+                            <span class="font-bold">Power BI & Business Intelligence</span>
+                            <span class="text-blue-400">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10">
+                            <span class="font-bold">Advanced Excel (Pivot, Power Query)</span>
+                            <span class="text-blue-400">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10">
+                            <span class="font-bold">Financial Statements Preparation</span>
+                            <span class="text-blue-400">15+ Years</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10">
+                            <span class="font-bold">MS Word Professional Formatting</span>
+                            <span class="text-blue-400">Master</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="aspect-square bg-blue-600 rounded-3xl flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-4xl mb-2 font-black">ICDL</span>
+                        <p class="text-sm font-medium">Certified Professional</p>
+                    </div>
+                    <div class="aspect-square bg-slate-800 rounded-3xl flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-4xl mb-2 font-black">15+</span>
+                        <p class="text-sm font-medium">Years Experience</p>
+                    </div>
+                    <div class="aspect-square bg-slate-800 rounded-3xl flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-4xl mb-2 font-black">SQL</span>
+                        <p class="text-sm font-medium">Data Logic</p>
+                    </div>
+                    <div class="aspect-square bg-blue-500 rounded-3xl flex flex-col items-center justify-center p-6 text-center">
+                        <span class="text-4xl mb-2 font-black">100%</span>
+                        <p class="text-sm font-medium">Commitment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-black mb-16">Why Work With Me?</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-blue-600 underline decoration-4 underline-offset-8">Long Experience</h4>
+                    <p class="text-slate-600">Minimizing risks and errors through 15 years of practical deep-dive in accounting.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-blue-600 underline decoration-4 underline-offset-8">Deep Insight</h4>
+                    <p class="text-slate-600">Accounting logic backed by modern data analysis techniques for real value.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-blue-600 underline decoration-4 underline-offset-8">Reliability</h4>
+                    <p class="text-slate-600">Organized workflow, clear results, and a focus on meeting deadlines every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl shadow-blue-100 border border-slate-100">
+                <h2 class="text-4xl font-black mb-6 text-slate-900">Let's Talk Numbers</h2>
+                <p class="text-slate-600 mb-10 text-lg">I'm available for freelance projects on top platforms.</p>
+                
+                <!-- Freelance Platforms -->
+                <div class="mb-12">
+                    <p class="text-slate-400 text-xs font-black uppercase tracking-[0.2em] mb-6">Freelance Platforms</p>
+                    <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                        <a href="https://mostaql.com" target="_blank" class="px-6 py-3 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-500 hover:text-blue-600 transition-all font-bold text-slate-700 flex items-center gap-2">
+                            <span>Mostaql</span>
+                        </a>
+                        <a href="https://upwork.com" target="_blank" class="px-6 py-3 rounded-2xl bg-slate-50 border border-slate-100 hover:border-green-500 hover:text-green-600 transition-all font-bold text-slate-700 flex items-center gap-2">
+                            <span>Upwork</span>
+                        </a>
+                        <a href="https://freelancer.com" target="_blank" class="px-6 py-3 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-400 hover:text-blue-500 transition-all font-bold text-slate-700 flex items-center gap-2">
+                            <span>Freelancer</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Direct Social & Messenger -->
+                <div class="mb-12">
+                    <p class="text-slate-400 text-xs font-black uppercase tracking-[0.2em] mb-6">Direct Channels</p>
+                    <div class="flex flex-wrap justify-center gap-6 text-lg font-bold">
+                        <a href="https://github.com" target="_blank" class="text-slate-700 hover:text-blue-600 transition">GitHub</a>
+                        <a href="https://wa.me/yournumber" target="_blank" class="text-emerald-600 hover:text-emerald-700 transition">WhatsApp</a>
+                        <a href="https://linkedin.com" target="_blank" class="text-blue-700 hover:text-blue-900 transition">LinkedIn</a>
+                    </div>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in-up md:col-span-1">
-                        <p class="text-lg text-text-muted dark:text-gray-400 mb-6">
-                            My unique professional journey bridges the precision of **Accounting** with the power of **Data Analysis**. With a solid background in financial reporting and compliance, I understand the critical importance of data integrity and accuracy.
-                        </p>
-                        <p class="text-lg text-text-muted dark:text-gray-400 mb-6">
-                            I specialize in taking raw, disparate financial data—from ledgers to transactional systems—and transforming it into dynamic, executive-level reports and interactive dashboards. My focus is not just on *what* the numbers are, but *why* they matter and *what* strategic actions they dictate.
-                        </p>
-                        <p class="text-lg text-text-muted dark:text-gray-400">
-                            I am committed to implementing efficient BI solutions that automate routine reporting, freeing up time for deep-dive financial analysis, forecasting, and driving proactive business recommendations.
-                        </p>
-                    </div>
-                    
-                    <!-- Placeholder Image/Graphic -->
-                    <div class="hidden md:block md:col-span-1 p-8 bg-card-light dark:bg-card-dark rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 fade-in-up">
-                        <img src="https://placehold.co/600x400/2563eb/ffffff?text=Data+%26+Finance+Visual" alt="Conceptual illustration of data analysis and finance" class="w-full h-auto rounded-lg object-cover">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 sm:py-24 bg-white dark:bg-card-dark transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-up">
-                    <h2 class="text-4xl font-extrabold text-text-base dark:text-gray-100">Core Expertise</h2>
-                    <p class="mt-4 text-xl text-text-muted dark:text-gray-400 max-w-2xl mx-auto">Mastery in Microsoft BI Stack and Financial Fundamentals</p>
-                </div>
+                <hr class="mb-12 border-slate-100">
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                    <!-- Skill Card 1: Power BI -->
-                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition duration-300 fade-in-up" style="transition-delay: 0.1s;">
-                        <div class="text-4xl text-primary mb-4">
-                            <svg class="icon-svg w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM12 8v4l3 3"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Power BI</h3>
-                        <p class="text-text-muted text-sm">Advanced DAX, Data Modeling, M-Query, Interactive Dashboards, Power BI Service administration.</p>
-                    </div>
-                    
-                    <!-- Skill Card 2: Excel -->
-                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition duration-300 fade-in-up" style="transition-delay: 0.2s;">
-                        <div class="text-4xl text-primary mb-4">
-                            <svg class="icon-svg w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5M12 15V3"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Excel Expertise</h3>
-                        <p class="text-text-muted text-sm">Advanced Formulas, Power Query, VBA Automation, Financial and statistical modeling.</p>
-                    </div>
-
-                    <!-- Skill Card 3: SQL -->
-                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition duration-300 fade-in-up" style="transition-delay: 0.3s;">
-                        <div class="text-4xl text-primary mb-4">
-                            <svg class="icon-svg w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 13.5V10c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3.5M14 13.5V10c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3.5M2 18.5V15c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3.5M14 18.5V15c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3.5"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">SQL Querying</h3>
-                        <p class="text-text-muted text-sm">Efficient querying, data transformation, stored procedures (T-SQL/PL-SQL), database integration.</p>
-                    </div>
-
-                    <!-- Skill Card 4: Financial Analysis -->
-                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition duration-300 fade-in-up" style="transition-delay: 0.4s;">
-                        <div class="text-4xl text-primary mb-4">
-                            <svg class="icon-svg w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Financial Analysis</h3>
-                        <p class="text-text-muted text-sm">Budgeting, Forecasting, Variance Analysis, Cost-Benefit Analysis, GAAP/IFRS principles.</p>
-                    </div>
-                    
-                    <!-- Skill Card 5: Data Visualization -->
-                    <div class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition duration-300 fade-in-up" style="transition-delay: 0.5s;">
-                        <div class="text-4xl text-primary mb-4">
-                            <svg class="icon-svg w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3v18h18M18 12l-6-6-4 4-3-3"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Data Visualization</h3>
-                        <p class="text-text-muted text-sm">Designing intuitive, high-impact visuals to communicate complex data narratives clearly.</p>
-                    </div>
-                </div>
+                <p class="text-slate-500 mb-2 font-medium">Direct Email</p>
+                <a href="mailto:Contact@MohamedMosaad.com" class="text-xl md:text-3xl font-black text-blue-700 hover:text-blue-500 transition break-all leading-tight">Contact@MohamedMosaad.com</a>
             </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 sm:py-24 bg-bg-light dark:bg-bg-dark transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-up">
-                    <h2 class="text-4xl font-extrabold text-text-base dark:text-gray-100">Selected Projects</h2>
-                    <p class="mt-4 text-xl text-text-muted dark:text-gray-400 max-w-2xl mx-auto">Demonstrating practical application of financial and analytical skills.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Project Card 1: Sales Dashboard -->
-                    <div class="bg-card-light dark:bg-card-dark rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 fade-in-up">
-                        <div class="p-6 sm:p-8">
-                            <div class="flex items-center space-x-4 mb-4">
-                                <span class="text-4xl text-primary">📈</span>
-                                <h3 class="text-2xl font-bold text-text-base dark:text-gray-100">Global Sales Performance Dashboard</h3>
-                            </div>
-                            <img class="w-full h-auto rounded-lg mb-6 shadow-md" 
-                                 src="https://placehold.co/600x300/e0f2fe/1e40af?text=Power+BI+Dashboard+Mockup" 
-                                 alt="Screenshot of a Power BI Sales Dashboard" 
-                                 onerror="this.onerror=null;this.src='https://placehold.co/600x300/e0f2fe/1e40af?text=Power+BI+Dashboard+Mockup';">
-                            
-                            <p class="text-text-muted mb-4">
-                                Developed a comprehensive Power BI solution for real-time tracking of sales metrics, focusing on profitability by region, product line, and salesperson. Used complex DAX measures (YTD, MTD, Rolling Averages) to provide historical context and accurate forecasting.
-                            </p>
-                            <div class="text-sm font-medium text-text-base dark:text-gray-100 mb-4">
-                                <strong>Tools Used:</strong> Power BI (Advanced DAX, Data Modeling), SQL Server (Source), Power Query.
-                            </div>
-                            <a href="#" class="inline-flex items-center text-primary hover:underline font-semibold transition duration-150">
-                                View Live Demo (Mock)
-                                <svg class="icon-svg w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project Card 2: Financial Forecasting -->
-                    <div class="bg-card-light dark:bg-card-dark rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 fade-in-up" style="transition-delay: 0.2s;">
-                        <div class="p-6 sm:p-8">
-                            <div class="flex items-center space-x-4 mb-4">
-                                <span class="text-4xl text-primary">💰</span>
-                                <h3 class="text-2xl font-bold text-text-base dark:text-gray-100">Dynamic 5-Year Financial Forecasting Model</h3>
-                            </div>
-                            <img class="w-full h-auto rounded-lg mb-6 shadow-md" 
-                                 src="https://placehold.co/600x300/dbeafe/1e40af?text=Excel+Forecasting+Mockup" 
-                                 alt="Screenshot of an Excel Financial Model" 
-                                 onerror="this.onerror=null;this.src='https://placehold.co/600x300/dbeafe/1e40af?text=Excel+Forecasting+Mockup';">
-                            
-                            <p class="text-text-muted mb-4">
-                                Built an advanced Excel-based model for multi-scenario forecasting (Best, Worst, Base Case). The model includes automated sensitivity analysis and detailed P&L, Balance Sheet, and Cash Flow statement projections, adhering strictly to accounting standards.
-                            </p>
-                            <div class="text-sm font-medium text-text-base dark:text-gray-100 mb-4">
-                                <strong>Tools Used:</strong> Microsoft Excel (Goal Seek, Data Tables, INDEX/MATCH), Financial Accounting Principles.
-                            </div>
-                            <a href="#" class="inline-flex items-center text-primary hover:underline font-semibold transition duration-150">
-                                View on GitHub (Mock)
-                                <svg class="icon-svg w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.4 5.4 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3 2.05 2.05 0 0 0 18 2h-2v3h-4v-3h-2v3h-4v-3H4.09a2.05 2.05 0 0 0-1.91 1 5.07 5.07 0 0 0-.09 1.77A5.4 5.4 0 0 0 2 11c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9.94 18v3.87"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="py-20 sm:py-24 bg-white dark:bg-card-dark transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-up">
-                    <h2 class="text-4xl font-extrabold text-text-base dark:text-gray-100">Certifications</h2>
-                    <p class="mt-4 text-xl text-text-muted dark:text-gray-400 max-w-2xl mx-auto">Verifiable commitment to technical and financial excellence.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- Certification 1: Data Analyst Associate -->
-                    <div class="p-6 bg-card-light dark:bg-bg-dark rounded-xl shadow-lg border-l-4 border-accent hover:shadow-xl transition duration-300 fade-in-up">
-                        <h3 class="text-2xl font-bold text-text-base dark:text-gray-100 mb-2">Microsoft Certified: Data Analyst Associate</h3>
-                        <p class="text-sm text-primary font-semibold mb-4">Power BI (PL-300)</p>
-                        <p class="text-text-muted">Expertise in designing and building scalable data models, cleaning and transforming data, and delivering meaningful insights using Power BI.</p>
-                    </div>
-                    
-                    <!-- Certification 2: MOS Expert -->
-                    <div class="p-6 bg-card-light dark:bg-bg-dark rounded-xl shadow-lg border-l-4 border-accent hover:shadow-xl transition duration-300 fade-in-up" style="transition-delay: 0.1s;">
-                        <h3 class="text-2xl font-bold text-text-base dark:text-gray-100 mb-2">Microsoft Office Specialist: Excel Expert</h3>
-                        <p class="text-sm text-primary font-semibold mb-4">MOS Expert (MO-201)</p>
-                        <p class="text-text-muted">Demonstrates advanced ability to perform complex calculations, create sophisticated reports, and apply advanced data analysis features in Excel.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 sm:py-24 bg-bg-light dark:bg-bg-dark transition-colors duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-up">
-                    <h2 class="text-4xl font-extrabold text-text-base dark:text-gray-100">Get in Touch</h2>
-                    <p class="mt-4 text-xl text-text-muted dark:text-gray-400 max-w-2xl mx-auto">Ready to leverage data for your next financial or analytical challenge?</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    <!-- Contact Card 1: Email -->
-                    <a href="mailto:Meeedo_17@yahoo.com" class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg text-center hover:shadow-xl hover:scale-[1.02] transition duration-300 fade-in-up">
-                        <div class="text-3xl text-primary mb-3 mx-auto">
-                            <svg class="icon-svg w-8 h-8 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                        </div>
-                        <h4 class="text-lg font-semibold">Email Me</h4>
-                        <p class="text-text-muted text-sm break-all">Meeedo_17@yahoo.com</p>
-                    </a>
-                    
-                    <!-- Contact Card 2: LinkedIn -->
-                    <a href="https://linkedin.com/in/mohamed--mosaad" target="_blank" class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg text-center hover:shadow-xl hover:scale-[1.02] transition duration-300 fade-in-up" style="transition-delay: 0.1s;">
-                        <div class="text-3xl text-primary mb-3 mx-auto">
-                            <svg class="icon-svg w-8 h-8 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M2 17h4v4H2zM4 4h.01"></path></svg>
-                        </div>
-                        <h4 class="text-lg font-semibold">LinkedIn</h4>
-                        <p class="text-text-muted text-sm">mohamed--mosaad</p>
-                    </a>
-
-                    <!-- Contact Card 3: GitHub -->
-                    <a href="https://github.com/meeedo63-rgb" target="_blank" class="p-6 bg-card-light dark:bg-card-dark rounded-xl shadow-lg text-center hover:shadow-xl hover:scale-[1.02] transition duration-300 fade-in-up" style="transition-delay: 0.2s;">
-                        <div class="text-3xl text-primary mb-3 mx-auto">
-                            <svg class="icon-svg w-8 h-8 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.4 5.4 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3 2.05 2.05 0 0 0 18 2h-2v3h-4v-3h-2v3h-4v-3H4.09a2.05 2.05 0 0 0-1.91 1 5.07 5.07 0 0 0-.09 1.77A5.4 5.4 0 0 0 2 11c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9.94 18v3.87"></path></svg>
-                        </div>
-                        <h4 class="text-lg font-semibold">GitHub</h4>
-                        <p class="text-text-muted text-sm">meeedo63-rgb</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-card-dark border-t border-gray-200 dark:border-gray-700 py-8 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-text-muted dark:text-gray-400 text-sm">
-                &copy; 2024 Mohamed Mosaad | Strategic Insights. Built for the data-driven professional.
-            </p>
+    <footer class="py-12 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-slate-400 text-sm">
+            <p>&copy; 2024 Mohamed Mosaad. Professional Accounting & Analytics.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-blue-600 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-600 transition">Terms of Service</a>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // --- JavaScript Functionality ---
-
-        // 1. Dark/Light Mode Toggle
-        const toggleButton = document.getElementById('theme-toggle');
-        const toggleButtonMobile = document.getElementById('theme-toggle-mobile');
-        const themeIcon = document.getElementById('theme-icon');
-        const themeIconMobile = document.getElementById('theme-icon-mobile');
-        const sunIcon = '<svg class="icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v2a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3zm0 14a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm-5-8h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm10 0h2a1 1 0 0 0 0 2h-2a1 1 0 0 0 0-2zM5.64 5.64a1 1 0 0 0-1.42 1.42l1.41 1.41a1 1 0 0 0 1.42-1.42L5.64 5.64zm12.72 12.72a1 1 0 0 0 1.42-1.42l-1.41-1.41a1 1 0 0 0-1.42 1.42l1.41 1.41zM18.36 5.64l1.42 1.42a1 1 0 0 0-1.42 1.42l-1.41-1.41a1 1 0 0 0 1.41-1.42zm-12.72 12.72l-1.42-1.42a1 1 0 1 0 1.42-1.42l1.41 1.41a1 1 0 0 0-1.41 1.42zM12 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1z"></path></svg>';
-        const moonIcon = '<svg class="icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>';
-
-        function applyTheme(isDark) {
-            document.documentElement.classList.toggle('dark', isDark);
-            themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
-            themeIconMobile.innerHTML = isDark ? sunIcon : moonIcon;
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        }
-
-        function initializeTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-            applyTheme(isDark);
-        }
-
-        function toggleTheme() {
-            const isDark = document.documentElement.classList.contains('dark');
-            applyTheme(!isDark);
-        }
-
-        toggleButton.addEventListener('click', toggleTheme);
-        toggleButtonMobile.addEventListener('click', toggleTheme);
-        
-        initializeTheme();
-
-
-        // 2. Mobile Menu Logic
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            // Change icon to X when open
-            mobileMenuButton.innerHTML = mobileMenu.classList.contains('hidden') 
-                ? '<svg class="icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"></path></svg>'
-                : '<svg class="icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg>';
-        });
-        
-        // Close mobile menu when a link is clicked
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.innerHTML = '<svg class="icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"></path></svg>';
-            });
-        });
-
-
-        // 3. Scroll-based Animations (Intersection Observer)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1 
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Stop observing once animated
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // 4. Active Navigation Link on Scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        const setActiveLink = () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100; // Offset for fixed nav
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', setActiveLink);
-        document.addEventListener('DOMContentLoaded', setActiveLink); // Check on load
-        
-    </script>
 </body>
-
 </html>
-
-
